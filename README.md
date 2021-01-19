@@ -10,16 +10,24 @@ Before all, edit the 10th line :
 
     set  defaultPath="C:\xampp\htdocs"
 
-It's the folder where the piece of software will set your next projects.
+It the folder where the piece of software will set your next projects.
 
 By default it's *C:\xampp\htdocs* due to i work with XAMPP.
+
+After, edit the 14th line :
+
+	set  end="CMD"
+
+Set `CMD` if you want that the program open a cmd in your folder project.
+
+Set `EXIT` if you want that the program close at end.
 
 # How to use
 Simple. Open it and read.
 
 It reminds you your default folder path and your existing projects in it.
 
-It suggests you if you want to change the the parent folder path.
+It suggests you i f you want to change the the parent folder path.
 
 Press **ENTER** if you don't want.
 
@@ -30,7 +38,7 @@ Next, it ask you the project name. If you just press **ENTER** the default name 
 And it show you what happen :
 
 
-    Redirection to "C:\xampp\htdocs"
+     Redirection to "C:\xampp\htdocs"
 	  Creation of the folder "Project_19012021_16012260"
 	  Redirection to "Project_19012021_16012260"
 	
