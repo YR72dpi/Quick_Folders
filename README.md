@@ -19,7 +19,7 @@ Simple. Open it and read.
 
 It reminds you your default folder path and your existing projects in it.
 
-It suggests you i f you want to change the the parent folder path.
+It suggests you if you want to change the the parent folder path.
 
 Press **ENTER** if you don't want.
 
