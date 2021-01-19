@@ -9,9 +9,9 @@ title "New project"
 :: write the default path of parents folder of your projects
 set defaultPath="C:\xampp\htdocs"
 
-:: Set CMD if you want that the program open a cmd in your folder project
-:: Set EXIT if you want that the program close at end
-set end="CMD"
+:: Set TRUE if you want that the program open a cmd in your folder project
+:: Set FALSE if you want that the program close at end
+set keepOpen="TRUE"
 
 :: -------------------------------------------------------------------------
 
@@ -83,9 +83,9 @@ echo.
 echo --- FOLDERS ---
 echo.
 
-call :newFolder  elements
-call :newFolder  styles
-call :newFolder  script
+call :newFolder elements
+call :newFolder styles
+call :newFolder script
 call :newFolder images
 
 ::------[ create files ]---------------------------------------------
@@ -107,23 +107,19 @@ echo %space%[Files Created] : .htacces
 
 ::-------------------------
 
-
+IF %keepOpen% == "TRUE" (
+    echo.
+    echo Press any key to go to cmd
+    pause>nul   
+    color 07
+    cls
+    cmd.exe
+)
 
 echo.
 echo Press any key to quit
 pause>nul
-
-IF %end% == "CMD" (
-color 07
-cls
-cmd.exe
-) else (
-    IF %end% == "EXIT" (
-        exit
-    )
-)
-
-IF %end% 
+exit
 
 
 :: ---------------------------------------------------- F O N C T I O N
