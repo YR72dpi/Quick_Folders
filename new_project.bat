@@ -15,8 +15,6 @@ set keepOpen="TRUE"
 
 :: -------------------------------------------------------------------------
 
-
-
 :: Defines Date
 ::for /f "tokens=1,2,3 delims=/ " %%a in ('date /t') do set maDate=%%a-%%b-%%c
 for /f "delims=/ tokens=1,2,3" %%a in ('date /t') do set day=%%a
@@ -43,29 +41,56 @@ set DefaultProjetcName=Project_%day%%month%%year%_%heure%%minute%%seconde%%milis
 :: Just a space for display
 set space=  
 
+:: Equal 1 if the folder already exist
+set alreadyExistFolder=0
+
 :: ---------------------------------------------------- P R O G R A M
 
 echo %space%Press any key to start
 pause >nul
-cls
-echo.
 cd %defaultPath%
+cls
+
+:: Restart here if your project name already exist
+
+:NameFolder
+IF %alreadyExistFolder% == 1 (
+    cls
+    color c
+    echo.
+    echo %space%%space%%space%%space%--- The project name you put is already used ---
+)
+
+:: --- Show default path and existing project
+
+echo.
 echo %space%Default project path : %cd%
 echo.
-echo %space%Your existing projects (in your default path)
+echo %space%Your existing projects (in your default path) :
 echo.
 dir /B
 echo.
 echo ------------------------------------------
 echo.
+
+:: --- Ask some informations
 set /p "DOSSIER=%space%Change the path of parent folder : "
 set /p "NAME=%space%Name your project (else, default name) : "
 
+:: --- Test
+set alreadyExistFolder=0
+
 IF "%DOSSIER%" == "" (set DOSSIER=%defaultPath%)
 IF "%NAME%" == "" (set NAME=%DefaultProjetcName%)
+IF EXIST "%DOSSIER%" ( 
+    set alreadyExistFolder=1
+    goto :NameFolder
+)
 
+color F0
 cls
 echo.
+
 ::----------------------------------
 echo %space%Redirection to %DOSSIER%
 cd "%DOSSIER%"
@@ -77,6 +102,7 @@ mkdir "%NAME%"
 ::-------------------------------
 echo %space%Redirection to "%NAME%"
 cd "%NAME%"
+
 
 ::------[ Create folder ]---------------------------------------------
 echo.
@@ -114,12 +140,12 @@ IF %keepOpen% == "TRUE" (
     color 07
     cls
     cmd.exe
+) else (
+    echo.
+    echo Press any key to quit
+    pause>nul
+    exit
 )
-
-echo.
-echo Press any key to quit
-pause>nul
-exit
 
 
 :: ---------------------------------------------------- F O N C T I O N
