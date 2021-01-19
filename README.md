@@ -10,7 +10,7 @@ Before all, edit the 10th line :
 
     set  defaultPath="C:\xampp\htdocs"
 
-It the folder where the piece of software will set your next projects.
+It's the folder where the piece of software will set your next projects.
 
 By default it's *C:\xampp\htdocs* due to i work with XAMPP.
 
