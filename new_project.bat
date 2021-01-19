@@ -52,7 +52,7 @@ dir /B
 echo.
 echo ------------------------------------------
 echo.
-set /p "DOSSIER=%space%Change the the path of parent folder : "
+set /p "DOSSIER=%space%Change the path of parent folder : "
 set /p "NAME=%space%Name your project (else, default name) : "
 
 IF "%DOSSIER%" == "" (set DOSSIER=%defaultPath%)
@@ -65,7 +65,7 @@ echo %space%Redirection to %DOSSIER%
 cd "%DOSSIER%"
 
 ::---------------------------------
-echo %space%Creation of folder "%NAME%"
+echo %space%Creation of the folder "%NAME%"
 mkdir "%NAME%"
 
 ::-------------------------------
