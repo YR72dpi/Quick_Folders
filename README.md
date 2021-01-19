@@ -14,6 +14,8 @@ It the folder where the piece of software will set your next projects.
 
 By default it's *C:\xampp\htdocs* due to i work with XAMPP.
 
+
+
 After, edit the 14th line :
 
 	set  end="CMD"
