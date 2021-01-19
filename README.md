@@ -18,11 +18,11 @@ By default it's *C:\xampp\htdocs* due to i work with XAMPP.
 
 After, edit the 14th line :
 
-	set  end="CMD"
+	set  keepOpen="CMD"
 
-Set `CMD` if you want that the program open a cmd in your folder project.
+Set `TRUE` if you want that the program open a cmd in your folder project.
 
-Set `EXIT` if you want that the program close at end.
+Set `FALSE` if you want that the program close at end.
 
 # How to use
 Simple. Open it and read.
