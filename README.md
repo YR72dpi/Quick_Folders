@@ -18,7 +18,7 @@ By default it's *C:\xampp\htdocs* due to i work with XAMPP.
 
 After, edit the 14th line :
 
-	set  keepOpen="CMD"
+	set  keepOpen="TRUE"
 
 Set `TRUE` if you want that the program open a cmd in your folder project.
 
