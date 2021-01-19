@@ -6,9 +6,12 @@ title "New project"
 
 :: ------------------[ EDITABLE ]-------------------------------------------
 
-:: write the default path of parents folder of yours projects
+:: write the default path of parents folder of your projects
 set defaultPath="C:\xampp\htdocs"
-set space=  
+
+:: Set CMD if you want that the program open a cmd in your folder project
+:: Set EXIT if you want that the program close at end
+set end="CMD"
 
 :: -------------------------------------------------------------------------
 
@@ -36,6 +39,9 @@ set miliseconde=%time:~9,2%
 
 :: If you don't give a project name, it will be this by default
 set DefaultProjetcName=Project_%day%%month%%year%_%heure%%minute%%seconde%%miliseconde%
+
+:: Just a space for display
+set space=  
 
 :: ---------------------------------------------------- P R O G R A M
 
@@ -101,13 +107,23 @@ echo %space%[Files Created] : .htacces
 
 ::-------------------------
 
+
+
 echo.
 echo Press any key to quit
 pause>nul
+
+IF %end% == "CMD" (
 color 07
 cls
 cmd.exe
+) else (
+    IF %end% == "EXIT" (
+        exit
+    )
+)
 
+IF %end% 
 
 
 :: ---------------------------------------------------- F O N C T I O N
