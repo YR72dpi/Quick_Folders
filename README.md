@@ -40,7 +40,7 @@ Next, it ask you the project name. If you just press **ENTER** the default name 
 And it show you what happen :
 
 
-     Redirection to "C:\xampp\htdocs"
+     	  Redirection to "C:\xampp\htdocs"
 	  Creation of the folder "Project_19012021_16012260"
 	  Redirection to "Project_19012021_16012260"
 	
